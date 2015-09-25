@@ -1,0 +1,12 @@
+{
+  "name": "ng-boilerplate",
+  "version": "0.3.2",
+  "devDependencies": {
+    "angular": "~1.4.6",
+    "angular-mocks": "~1.2",
+    "bootstrap": "~3.3.5",
+    "angular-bootstrap": "~0.13.4",
+    "angular-ui-router": "~0.2.15"
+  },
+  "dependencies": {}
+}
