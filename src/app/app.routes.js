@@ -3,16 +3,16 @@ angular.module('webSuenth')
 .config(function config($stateProvider) {
 
   $stateProvider
-    .state('home', {
-      url: '/home',
+    .state('suenth', {
+      url: '/suenth',
       views: {
         "main": {
-          controller: 'HomeCtrl',
-          templateUrl: 'home/home.tpl.html'
+          controller: 'SuenthCtrl',
+          templateUrl: 'suenth/suenth.tpl.html'
         }
       },
       data: {
-        pageTitle: 'Home'
+        pageTitle: 'Suenth'
       }
     })
     .state('about', {

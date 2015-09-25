@@ -1,12 +1,13 @@
 angular.module('webSuenth', [
   'templates-app',
-  'webSuenth.home',
+  'webSuenth.suenth',
   'webSuenth.about',
   'ui.router'
 ])
 
-.config(function myAppConfig($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.otherwise('/home');
+.config(function myAppConfig($stateProvider, $urlRouterProvider, $locationProvider) {
+  $urlRouterProvider.otherwise('/suenth');
+  $locationProvider.html5Mode(true);
 })
 
 .run(function run() {})
