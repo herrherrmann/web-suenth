@@ -12,7 +12,7 @@ angular.module('webSuenth', [
 
 .run(function run() {})
 
-.controller('AppCtrl', function AppCtrl($scope, $location) {
+.controller('AppCtrl', function($scope, $location) {
 
   $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
     if (angular.isDefined(toState.data.pageTitle)) {
