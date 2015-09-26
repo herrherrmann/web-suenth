@@ -1,5 +1,8 @@
 angular.module('webSuenth', [
   'templates-app',
+  'ui.bootstrap',
+  'ngAnimate',
+  'ngResource',
   'webSuenth.suenth',
   'webSuenth.about',
   'ui.router'

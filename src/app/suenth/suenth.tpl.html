@@ -1,3 +1,107 @@
 <button type="button" class="btn btn-default" ng-click="playSound()">
   Play Sound
 </button>
+<hr>
+
+<div class="row">
+  <div class="col-sm-3">
+    <div class="form-group">
+      <label>Oscillator</label>
+      <select ng-model="oscillator.type" class="form-control">
+        <option value="{{type}}" ng-repeat="type in oscillatorTypes">{{type}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="form-group">
+      <label>Filter</label>
+      <select ng-model="filter.type" class="form-control">
+        <option value="{{type}}" ng-repeat="type in filterTypes">{{type}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="form-group">
+      <label>Freq:</label>
+      <!-- <knob
+        knob-data="oscillator.filterFrequency"
+        knob-options="{
+          width: 80,
+          fgColor: '#000',
+          angleArc: 270,
+          angleOffset: 225,
+          skin: 'tron',
+          lineCap: 'round',
+          thickness: 0.3,
+          min: 0,
+          max: 10000
+        }">
+      </knob> -->
+      <input
+        type="text"
+        ng-model="filter.frequency"
+        slider options="{ from: 0, to: 10000, step: 1, round: 0, realtime: true }">
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <label>Volume:</label>
+    <input
+      type="text"
+      ng-model="globalVolume"
+      slider options="{ from: 0, to: 1, step: 0.1, round: 1, realtime: true}">
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-3">
+    <label>Attack:</label>
+    <input
+      type="text"
+      ng-model="oscillator.attack"
+      slider options="{ from: 0, to: 10, step: 0.5, round: 1 }">
+  </div>
+  <div class="col-sm-3">
+    <label>Decay:</label>
+    <input
+      type="text"
+      ng-model="oscillator.decay"
+      slider options="{ from: 0, to: 10, step: 0.5, round: 1 }">
+  </div>
+  <div class="col-sm-3">
+    <label>Sustain:</label>
+    <input
+      type="text"
+      ng-model="oscillator.sustain"
+      slider options="{ from: 0, to: 10, step: 0.5, round: 1 }">
+  </div>
+  <div class="col-sm-3">
+    <label>Release:</label>
+    <input
+      type="text"
+      ng-model="oscillator.release"
+      slider options="{ from: 0, to: 10, step: 0.5, round: 1 }">
+  </div>
+</div>
+
+<!-- <div class="btn-group">
+  <label
+    class="btn btn-primary"
+    ng-repeat="type in oscillatorTypes"
+    ng-model="oscillator.type"
+    btn-radio="type">
+    {{type}}
+  </label>
+</div> -->
+
+<div class="keyboard">
+  <button type="button"
+    ng-repeat="button in buttons"
+    ng-mousedown="playOscillatorTone(button)"
+    ng-mouseup="stopOscillatorTone(button)"
+    ng-mouseenter="playOscillatorTone(button, $event)"
+    ng-mouseleave="stopOscillatorTone(button)"
+    class="key {{button.class}}"
+    id="button.id">
+    {{button.label}}
+  </button>
+</div>
